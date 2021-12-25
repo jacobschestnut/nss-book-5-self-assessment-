@@ -1,0 +1,40 @@
+{
+    "authors": [
+        {
+            "id": 1,
+            "name": "Jake Chestnut"
+        },
+        {
+            "id": 2,
+            "name": "The Rock"
+        }
+    ],
+    "topics": [
+        {
+            "id": 1,
+            "name": "Rock Bands"
+        },
+        {
+            "id": 2,
+            "name": "The letter p"
+        },
+        {
+            "id": 3,
+            "name": "Tyler"
+        }
+    ],
+    "recipients": [
+        {
+            "id": 1,
+            "name": "The Rock"
+        },
+        {
+            "id": 2,
+            "name": "Old Greg"
+        },
+        {
+            "id": 3,
+            "name": "Jesus" 
+        }
+    ]
+}
