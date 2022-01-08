@@ -1,7 +1,8 @@
 const applicationState = {
     authors: [],
     topics: [],
-    recipients: []
+    recipients: [],
+    sentMail: []
 }
 
 const API = "http://localhost:8088"
@@ -20,13 +21,13 @@ export const fetchAuthors = () => {
 }
 
 export const getAuthors = () => {
-    applicationState.authors.sort(author => ({...author}))
+   return applicationState.authors.map(author => ({...author}))
 }
 
 //TOPICS--------------------------
 export const fetchTopics = () => {
     return fetch(`${API}/topics`)
-        .then(response => response.jsonn())
+        .then(response => response.json())
         .then(
             (data) => {
                 applicationState.topics = data;
@@ -35,13 +36,13 @@ export const fetchTopics = () => {
 }
 
 export const getTopics = () => {
-    applicationState.topics.sort(topic => ({...topic}))
+   return applicationState.topics.map(topic => ({...topic}))
 }
 
 //RECIPIENTS--------------------------
 export const fetchRecipients = () => {
     return fetch(`${API}/recipients`)
-        .then(response => response.jsonn())
+        .then(response => response.json())
         .then(
             (data) => {
                 applicationState.recipients = data;
@@ -50,5 +51,38 @@ export const fetchRecipients = () => {
 }
 
 export const getRecipients = () => {
-    applicationState.recipients.sort(recipient => ({...recipient}))
+   return applicationState.recipients.map(recipient => ({...recipient}))
+}
+
+//SENT MAIL-------------------------------
+
+export const saveMail = (data) => {
+    const saveMail = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    }
+
+    return fetch(`${API}/sentMail`, saveMail)
+        .then(response => response.json())
+        .then(() => {
+            mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+        })
+}
+
+export const fetchMail = () => {
+    return fetch(`${API}/sentMail`)
+        .then(response => response.json())
+        .then(
+            (data) => {
+                // Store the external state in application state
+                applicationState.sentMail = data
+            }
+        )
+}
+
+export const getLetters = () => {
+    return applicationState.sentMail.map(letter => ({...letter}))
 }

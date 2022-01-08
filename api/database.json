@@ -1,40 +1,87 @@
 {
-    "authors": [
-        {
-            "id": 1,
-            "name": "Jake Chestnut"
-        },
-        {
-            "id": 2,
-            "name": "The Rock"
-        }
-    ],
-    "topics": [
-        {
-            "id": 1,
-            "name": "Rock Bands"
-        },
-        {
-            "id": 2,
-            "name": "The letter p"
-        },
-        {
-            "id": 3,
-            "name": "Tyler"
-        }
-    ],
-    "recipients": [
-        {
-            "id": 1,
-            "name": "The Rock"
-        },
-        {
-            "id": 2,
-            "name": "Old Greg"
-        },
-        {
-            "id": 3,
-            "name": "Jesus" 
-        }
-    ]
+  "authors": [
+    {
+      "id": 1,
+      "name": "Jake Chestnut",
+      "email": "jacobschestnut@gmail.com"
+    },
+    {
+      "id": 2,
+      "name": "The Rock",
+      "email": "bigrock1000@hotmail.com"
+    }
+  ],
+  "topics": [
+    {
+      "id": 1,
+      "name": "Rock Bands"
+    },
+    {
+      "id": 2,
+      "name": "The letter p"
+    },
+    {
+      "id": 3,
+      "name": "Tyler"
+    }
+  ],
+  "recipients": [
+    {
+      "id": 1,
+      "name": "The Rock",
+      "email": "bigrock1000@hotmail.com"
+    },
+    {
+      "id": 2,
+      "name": "Old Gregg",
+      "email": "moderngentleman@yahoo.com"
+    },
+    {
+      "id": 3,
+      "name": "Jesus",
+      "email": "iamjesus@comcast.net"
+    }
+  ],
+  "sentMail": [
+    {
+      "content": "Test",
+      "author": "2",
+      "recipient": "3",
+      "topic": "3",
+      "date": 1641344460031,
+      "id": 1
+    },
+    {
+      "content": "Test 2",
+      "author": "1",
+      "recipient": "1",
+      "topic": "3",
+      "date": 1641346077569,
+      "id": 2
+    },
+    {
+      "content": "Test 3",
+      "author": "2",
+      "recipient": "1",
+      "topic": "3",
+      "date": 1641346230412,
+      "id": 3
+    },
+    {
+      "content": "1212",
+      "author": "1",
+      "recipient": "1",
+      "topic": "3",
+      "date": 1641346283738,
+      "id": 4
+    },
+    {
+      "content": "sss",
+      "author": "1",
+      "recipient": "1",
+      "topic": "3",
+      "date": 1641346537576,
+      "id": 5
+    }
+  ]
 }
