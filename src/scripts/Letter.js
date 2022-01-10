@@ -8,7 +8,7 @@ export const Letter = () => {
     const topics = getTopics()
 
     let html = `
-        <div class="container">
+        <div>
 
             <div class="field">
                 <label class="label" for="letterAuthor">Author</label>
@@ -19,24 +19,26 @@ export const Letter = () => {
             </div>
 
             <div class="field">
+                <label for="content">Letter</label>
+                <textarea type="text" name="content" class="input" rows=4 columns=50></textarea>
+            </div>
+
+            <div class="field">
+                <label class="label" for="letterTopic">Topic</label>
+                <div id="rows">
+                    ${topics.map(topic => {return `
+                        <input name="topic" value="${topic.id}" id="${topic.id}" type="radio"/>
+                        <label for="${topic.id}">${topic.name}</label>
+                    `}).join("")}
+                </div>
+            </div>
+
+            <div class="field">
                 <label class="label" for="letterRecipient">Recipient</label>
                 <select class="recipients" id="recipients">
                     <option>Choose Recipient</option>
                     ${recipients.map(recipient => {return `<option value="${recipient.id}">${recipient.name}</option>`}).join("")}
                 </select>
-            </div>
-
-            <div class="field">
-                <label class="label" for="letterTopic">Topic</label>
-                    ${topics.map(topic => {return `
-                        <input name="topic" value="${topic.id}" id="${topic.id}" type="radio"/>
-                        <label for="${topic.id}">${topic.name}</label>
-                    `}).join("")}
-            </div>
-
-            <div class="field">
-                <label for="content">Letter</label>
-                <input type="text" name="content" class="input"/>
             </div>
 
             <div>
@@ -49,23 +51,25 @@ export const Letter = () => {
 
 mainContainer.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "submit") {
+
+        const time = Date.now();
+        const today = new Date(time);
+
         // Get what the user typed into the form fields
         const letterAuthor = document.querySelector("select[class='authors']").value
-        const authorEmail = document.querySelector(`#authors`).email
         const letterRecipient = document.querySelector("select[class='recipients']").value
-        const recipientEmail = document.querySelector(`#recipients`).email
         const letterTopic = document.querySelector("input[name='topic']:checked").value
-        const letterContent = document.querySelector("input[name='content']").value
+        const letterContent = document.querySelector("textarea[name='content']").value
 
         // Make an object out of the user input
         const dataToSendToAPI = {
+
+            
             content: letterContent,
             author: letterAuthor,
-            authorEmail: authorEmail, 
             recipient: letterRecipient,
-            recipientEmail: recipientEmail,
             topic: letterTopic,
-            date: Date.now()
+            date: today.toDateString()
         }
 
         // Send the data to the API for permanent storage

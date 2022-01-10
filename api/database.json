@@ -45,43 +45,11 @@
   "sentMail": [
     {
       "content": "Test",
-      "author": "2",
-      "recipient": "3",
-      "topic": "3",
-      "date": 1641344460031,
+      "author": "1",
+      "recipient": "2",
+      "topic": "1",
+      "date": "Sat Jan 08 2022",
       "id": 1
-    },
-    {
-      "content": "Test 2",
-      "author": "1",
-      "recipient": "1",
-      "topic": "3",
-      "date": 1641346077569,
-      "id": 2
-    },
-    {
-      "content": "Test 3",
-      "author": "2",
-      "recipient": "1",
-      "topic": "3",
-      "date": 1641346230412,
-      "id": 3
-    },
-    {
-      "content": "1212",
-      "author": "1",
-      "recipient": "1",
-      "topic": "3",
-      "date": 1641346283738,
-      "id": 4
-    },
-    {
-      "content": "sss",
-      "author": "1",
-      "recipient": "1",
-      "topic": "3",
-      "date": 1641346537576,
-      "id": 5
     }
   ]
 }
